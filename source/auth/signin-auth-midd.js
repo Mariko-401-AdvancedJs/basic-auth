@@ -3,8 +3,7 @@
 const bcrypt = require('bcrypt');
 const base64 = require('base-64');
 const Users = require('./schema');
-//require?
-// const { nextTick } = require('process');
+
 
 async function basicAuth(req, res, next) {
 

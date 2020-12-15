@@ -14,9 +14,9 @@ const Users = require('./schema');
 
 
 //test
-router.get('/', (req, res, next) => {
-  res.send('hello');
-})
+// router.get('/', (req, res, next) => {
+//   res.send('hello');
+// })
 
 router.post('/signup', async (req, res) => {
   try {
