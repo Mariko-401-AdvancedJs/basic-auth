@@ -7,7 +7,9 @@
 ### Links and Resources
 -  Simon, Garrett, Kristian, Nathan, Ricardo
 
-- [front-end application](https://mariko-api-server.herokuapp.com/food)
+- [front-end application](https://mariko-basic-auth.herokuapp.com/signup)
+
+(can't deploy^^^)
 
 ### Setup
 
