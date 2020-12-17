@@ -13,14 +13,15 @@ async function basicAuth(req, res, next) {
   let [username, password] = decodedString.split(':');
 
   try {
-    const user = await Users.findOne({ username: username })
-    const valid = await bcrypt.compare(password, user.password);
+    req.user = await Users.authenticateBasic(username, password);//sending username on req body to get authenticated in DB to make sure it is valid, if valid return the user
+    // const user = await Users.findOne({ username: username })
+    // const valid = await bcrypt.compare(password, user.password);
     if (valid) {
       res.status(200).json(user);
       next();
     }
     else {
-      next(error);
+      next(err.message);
     }
   } catch (error) { res.status(403).send("Invalid Login"); }
 }
