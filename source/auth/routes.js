@@ -21,8 +21,8 @@ const Users = require('./schema');
 router.post('/signup', async (req, res) => {
   try {
     console.log(req.body);
-    req.body.password = await bcrypt.hash(req.body.password, 10);
-    console.log(req.body.password);
+    // req.body.password = await bcrypt.hash(req.body.password, 10);
+    // console.log(req.body.password);
     const user = new Users(req.body);
     console.log('check:', user);
     const record = await user.save(req.body);
@@ -31,6 +31,6 @@ router.post('/signup', async (req, res) => {
 });
 
 router.post('/signin', basicAuth, async (req, res) => {
-  res.status(200).json(user);
+  res.status(200).send(req.user);
 });
 module.exports = router;
